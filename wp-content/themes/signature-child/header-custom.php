@@ -24,10 +24,10 @@
 
 	<header>
 		<div class="container">
-			<div class="logo">
-				<img src="" alt="">
+			<div class="logo ib">
+				<img src="/wp-content/uploads/2018/06/logo.png" alt="">
 			</div>
-			<nav class="desktop">
+			<nav class="desktop ib">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',

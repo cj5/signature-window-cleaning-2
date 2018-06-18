@@ -1,7 +1,50 @@
 ul {
-  margin: 0 0 20px;
+  margin: 0;
   padding: 0;
   list-style: none;
+}
+.ib {
+  display: inline-block;
+}
+
+header {
+  height: 100px;
+  border-bottom: 3px solid $color-main;
+  position: relative;
+}
+.logo {
+  position: relative;
+  width: 30%;
+  height: 100px;
+  img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 250px;
+  }
+}
+nav {
+  position: relative;
+  width: 70%;
+  float: right;
+  height: 100px;
+  ul {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
+}
+
+#mobile-nav {
+  display: none;
 }
 
 // Bootstrap Grid
