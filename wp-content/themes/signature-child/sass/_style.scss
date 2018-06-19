@@ -1,3 +1,16 @@
+body {
+  font-family: $font;
+}
+a {
+  text-decoration: none;
+  @include transition();
+  &:hover {
+    color: $color-2 !important;
+  }
+}
+a, a:visited {
+  color: $color-1;  
+}
 ul {
   margin: 0;
   padding: 0;
@@ -6,16 +19,30 @@ ul {
 .ib {
   display: inline-block;
 }
+.hero .btn {
+  background: rgba(255,255,255,0.3);
+  padding: 14px 40px;
+  font-size: 20px;
+  border: 2px solid #fff;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 2px;
+  &:hover {
+    background-color: $color-2;
+    // border: 3px solid $color-2;
+  }
+}
 
 header {
-  height: 100px;
-  border-bottom: 3px solid $color-main;
+  height: $header-ht;
+  // border-bottom: 2px solid $color-1;
   position: relative;
 }
 .logo {
   position: relative;
   width: 30%;
-  height: 100px;
+  height: $header-ht;
   img {
     position: absolute;
     left: 0;
@@ -28,7 +55,7 @@ nav {
   position: relative;
   width: 70%;
   float: right;
-  height: 100px;
+  height: $header-ht;  
   ul {
     float: right;
     position: absolute;
@@ -37,14 +64,40 @@ nav {
     top: 50%;
     transform: translateY(-50%);
     li {
+      font-size: 18px;
       display: inline-block;
-      margin-left: 20px;
+      margin-left: 30px;
+      text-transform: uppercase;
+      font-weight: 500;
     }
   }
 }
 
 #mobile-nav {
   display: none;
+}
+
+section.hero {
+  position: relative;
+}
+#hero-filter {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+}
+.hero-content {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
 }
 
 // Bootstrap Grid

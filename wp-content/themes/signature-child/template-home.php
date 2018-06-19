@@ -19,11 +19,16 @@ Template Name: Home
 get_header('custom');
 ?>
 
-	<div class="container">
-		<p>
-			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum porro corporis ut doloremque nesciunt maiores quod expedita consequatur dicta, quaerat nobis, amet quibusdam, excepturi repudiandae. Amet fugiat optio maiores molestiae.
-		</p>
-	</div>
+	<section class="hero">
+		<img class="hero-img" src="/wp-content/uploads/2018/06/hero.jpg" alt="">
+		<div id="hero-filter"></div>
+		<div class="hero-content">
+			<div class="container">
+				<h1>A Premium Window Cleaning Service</h1>
+				<a class="btn" href="">Get a Free Quote</a>
+			</div>					
+		</div>
+	</section>
 
 <?php
 get_footer('custom');
