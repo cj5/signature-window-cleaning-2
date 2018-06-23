@@ -50,6 +50,12 @@ get_header('custom');
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				</div>
 			</div>			
+		</div>
+		<div class="home-about center">
+			<div class="container">
+				<h3>Who We Are</h3>
+				<p><strong><i>Signature Window Cleaning</i></strong> is made up of reliable and professional cleaners who provide top notch service all over the Saint Croix Falls area. Signature Windows not only offers window cleaning but pressure washing and gutter cleaning services. Contact us today to set up your free quote!</p>	
+			</div>	
 		</div>		
 	</section>
 

@@ -42,6 +42,7 @@
 
 <body <?php body_class(); ?>>
 
+	<div class="header-fill"></div>
 	<header>
 		<div class="container">
 			<div class="logo ib">
@@ -68,4 +69,4 @@
 				</nav>
 			</div>
 		</div>
-	</header>
+	</header>	

@@ -16,7 +16,7 @@
 			<div class="container">
 				<div class="center">
 					<img src="/wp-content/uploads/2018/06/logo-star.png" alt="">
-					<h4>Contact us today for a free quote!</h4>
+					<h4>Contact us today to set up your free quote!</h4>
 				</div>				
 				<div class="contact-wrapper">
 					<div class="left">
