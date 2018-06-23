@@ -1,5 +1,10 @@
 body {
   font-family: $font;
+  color: $color-1;
+}
+h1,h2,h3,h4,h5,p {
+  margin: 0;
+  padding: 0;
 }
 a {
   text-decoration: none;
@@ -19,7 +24,22 @@ ul {
 .ib {
   display: inline-block;
 }
-.hero .btn {
+.center {
+  text-align: center;
+}
+svg {
+  display: none;
+}
+.icon {
+  fill: $color-1;
+  stroke: $color-1;
+  stroke-width: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  @include transition();
+}
+#hero .btn {
   background: rgba(255,255,255,0.3);
   padding: 14px 40px;
   font-size: 20px;
@@ -28,6 +48,7 @@ ul {
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 2px;
+  display: inline-block;
   &:hover {
     background-color: $color-2;
     // border: 3px solid $color-2;
@@ -49,6 +70,10 @@ header {
     top: 50%;
     transform: translateY(-50%);
     max-width: 250px;
+    @include transition();
+    &:hover {
+      transform: scale(1.03) translateY(-50%);
+    }
   }
 }
 nav {
@@ -71,33 +96,170 @@ nav {
       font-weight: 500;
     }
   }
+  a {
+    color: $color-1 !important;
+  }
 }
 
 #mobile-nav {
   display: none;
 }
 
-section.hero {
+.section-pad {
+  padding: 80px 0;
+}
+
+#hero {
   position: relative;
 }
 #hero-filter {
   position: absolute;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.65);
 }
 .hero-content {
   text-align: center;
   width: 100%;
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
   h1 {
     color: #fff;
     text-transform: uppercase;
     font-size: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
+}
+#home-content {
+  .img-wrapper {
+    display: inline-block;
+    width: 100%;    
+    .img-box {
+      width: 31%;
+      margin-right: 3%;
+      display: inline-block;
+      text-align: center;
+      border: 2px solid #bbb;
+      border-radius: 2px;
+      padding: 14px 14px 30px;
+      // background-color: rgba(28,87,109,0.1);
+      &:nth-of-type(3) {
+        margin-right: 0;
+      }
+      img {
+        display: block;
+      }
+    }
+    h3 {
+      margin: 20px 0 10px;
+      text-transform: uppercase;
+      color: $color-2;
+      font-style: italic;
+      font-size: 22px;
+    }
+    p {
+      line-height: 20px;
+    }
+  }
+  h2 {
+    text-align: center;
+    text-transform: uppercase;    
+    font-style: italic;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+}
+
+footer {
+  .upper {
+    margin-bottom: 50px;
+    .contact-wrapper {
+      width: 600px;
+      margin: 0 auto;
+    }
+    .left {
+      display: inline-block;
+      width: 100%;
+      // width: 47%;
+      // margin-right: 5%;
+    }
+    .right {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      // width: 47%;
+      // float: right;
+    }
+    img {
+      max-width: 60px;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    h4 {
+      text-transform: uppercase;
+      font-size: 20px;
+      margin: 10px 0 40px;
+    }
+    .icons {
+      margin: 24px 0 40px;
+      a {
+        display: inline-block;
+      }
+      .icon {
+        margin: 0 10px;
+        &:hover {
+          fill: $color-2;
+        }
+      }
+    }
+    .icon-phone {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      top: 3px;
+      margin-right: 6px;
+    }
+  }
+  .lower {
+    background-color: $color-1;
+    p {
+      color: #fff;
+      padding: 16px 0;
+      font-size: 14px;
+    }
+  }
+  form  {
+    margin-bottom: 50px;
+    .wpcf7-form-control-wrap input {
+      width: 100%;
+    }
+    input[type="submit"] {
+      cursor: pointer;
+      background-color: #fff;
+      border: 2px solid $color-1;
+      border-radius: 2px;
+      font-family: $font;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px 40px;
+      @include transition();
+      &:hover {
+        border-color: $color-1;
+        color: #fff;
+        background-color: $color-1;
+      }
+    }
+    textarea {
+      height: 100px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+  }  
 }
 
 // Bootstrap Grid
