@@ -6,6 +6,9 @@ h1,h2,h3,h4,h5,p {
   margin: 0;
   padding: 0;
 }
+h1,h2,h3,h4,h5 {
+  text-transform: uppercase;
+}
 a {
   text-decoration: none;
   @include transition();
@@ -26,6 +29,15 @@ ul {
 }
 .center {
   text-align: center;
+}
+.bg-white {
+  background-color: #fff;
+  position: relative;
+  z-index: 9;
+}
+.content-width {
+  max-width: 750px;
+  margin: 0 auto;
 }
 svg {
   display: none;
@@ -65,7 +77,7 @@ header {
   border-bottom: 2px solid $color-1;
   position: fixed;
   top: 0;
-  z-index: 9;
+  z-index: 999;
   background-color: rgba(255,255,255,1.0);
   width: 100%;
   @include transition();
@@ -124,11 +136,19 @@ nav {
 #hero {
   position: relative;
 }
+#hero-fill {
+  position: relative;
+  z-index: 99;
+}
 #hero-filter {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   background: rgba(0,0,0,0.65);
+}
+.hero-img {
+  position: fixed;
+  top: 0px;
 }
 .hero-content {
   text-align: center;
@@ -137,13 +157,21 @@ nav {
   top: 50%;
   transform: translateY(-50%);
   h1 {
-    color: #fff;
-    text-transform: uppercase;
+    color: #fff;    
     font-size: 50px;
     margin-bottom: 40px;
   }
 }
+.star-logo {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 50px;
+  width: 60px;
+}
 #home-content {
+  background-color: #fff;
+  position: relative;
+  z-index: 9;
   .img-wrapper {
     display: inline-block;
     width: 100%;    
@@ -152,41 +180,42 @@ nav {
       margin-right: 3%;
       display: inline-block;
       text-align: center;
-      border: 2px solid #ccc;
       border-radius: 2px;
-      padding: 14px 14px 30px;
-      // background-color: rgba(28,87,109,0.1);
       &:nth-of-type(3) {
         margin-right: 0;
       }
       img {
         display: block;
       }
+      .wrapper {
+        border: 2px solid $color-1;
+        margin-top: 16px;
+        padding-bottom: 24px;
+        border-radius: 2px;
+      }
     }
     h3 {
-      margin: 20px 0 10px;
-      text-transform: uppercase;
+      margin: 20px 0 10px;      
       color: $color-2;
       font-style: italic;
-      font-size: 22px;
+      font-size: 22px;      
     }
     p {
       line-height: 20px;
-    }
+      padding: 0 20px;
+    }    
   }
   h2 {
-    text-align: center;
-    text-transform: uppercase;    
+    text-align: center;        
     font-style: italic;
     font-size: 32px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
   .home-about {
     padding: 90px 0 100px;
     margin: 100px 0 0;
     background-color: #F5F1E9;
-    h3 {
-      text-transform: uppercase;
+    h3 {      
       color: $color-2;
       font-size: 32px;
       margin-bottom: 30px;
@@ -198,8 +227,77 @@ nav {
     }
   }
 }
+#header-img {
+  position: fixed;
+  top: 0;
+  img {
+    display: block;
+  }
+}
+#header-img-fill {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+#header-img-filter {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+  background-color: rgba(0,0,0,0.2);
+}
+#page-heading {  
+  font-size: 32px;
+  line-height: 32px;  
+  z-index: 99;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+.subpage-content {
+  h3 {
+    color: $color-1;
+    margin-bottom: 20px;
+    font-size: 22px;
+    // font-style: italic;
+    border-bottom: 2px solid $color-2;
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+  p {
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+#testimonial {
+  border: 2px solid $color-1;
+  padding: 20px;
+  margin-bottom: 60px;
+  box-shadow: 6px 6px 10px #ccc;
+  .quote {
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+  img {
+    width: 30px;
+  }
+  .quoter {
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 18px;
+  }
+}
 
 footer {
+  background-color: #fff;
+  position: relative;
+  z-index: 9;
   .upper {
     margin-bottom: 50px;
     .contact-wrapper {
@@ -227,7 +325,6 @@ footer {
       display: inline-block;
     }
     h4 {
-      text-transform: uppercase;
       font-size: 20px;
       margin: 10px 0 40px;
     }
@@ -267,7 +364,7 @@ footer {
     input[type="submit"] {
       cursor: pointer;
       background-color: #fff;
-      border: 2px solid $color-1;
+      border: 2px solid $color-1 !important;
       border-radius: 2px;
       font-family: $font;
       font-size: 18px;
@@ -280,6 +377,13 @@ footer {
         color: #fff;
         background-color: $color-1;
       }
+    }
+    input.wpcf7-form-control, textarea {
+      border: 1px solid $color-1;
+      border-radius: 2px;
+      // &:focus {
+      //   outline-color: $color-2;
+      // }
     }
     textarea {
       height: 100px;
