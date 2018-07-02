@@ -1,6 +1,8 @@
 body {
   font-family: $font;
   color: $color-1;
+  @include transition();
+  animation: 1.0s ease-in-out fadeIn;
 }
 h1,h2,h3,h4,h5,p {
   margin: 0;
@@ -52,7 +54,7 @@ svg {
   @include transition();
 }
 #hero .btn {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.4);
   padding: 14px 40px;
   font-size: 20px;
   border: 2px solid #fff;
@@ -124,9 +126,125 @@ nav {
     color: $color-1 !important;
   }
 }
-
-#mobile-nav {
+.header-wrapper {
+  position: relative;
+  height: 110px;
+}
+#mobile-nav, #navicon {
   display: none;
+}
+#navicon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0px;
+  top: 42%;
+  transform: translateY(-50%);
+  bottom: 10px;
+  float: right;
+  cursor: pointer;
+  &:before {
+    content: "";
+    position: absolute;
+    @include transition();
+    left: 0;
+    top: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 3px;
+    background: $color-1;
+    box-shadow: 
+      0 8px 0 0 $color-1,
+      0 16px 0 0 $color-1;
+  }
+  &:hover:before {
+    background: $color-2;
+    box-shadow: 
+      0 8px 0 0 $color-2,
+      0 16px 0 0 $color-2;
+  }   
+}
+#mobile-nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  #mobile-nav-header {
+    display: inline-block;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    border-bottom: 2px solid $color-1;
+    .left {
+      display: inline-block;
+      width: 50%;
+    }
+    .right {
+      display: inline-block;
+      width: 49%;
+      #close {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        float: right;
+        &:after {
+          background-color: $color-1;
+          content: "";
+          height: 30px;
+          border-left: 2px solid $color-1;
+          position: absolute;
+          transform: rotate(45deg);
+          left: 14px;
+          @include transition();
+        }
+        &:before {
+          content: '';
+          height: 30px;
+          border-left: 2px solid $color-1;
+          position: absolute;
+          transform: rotate(-45deg);
+          left: 14px;
+          @include transition();
+        }
+        &:hover:after {
+          background-color: $color-2;
+          border-left: 2px solid $color-2;
+        }
+        &:hover:before {
+          background-color: $color-2;
+          border-left: 2px solid $color-2;
+        }
+      }
+    }
+    
+  }
+  nav {
+    width: 100%;
+    float: left;
+    .mobile {
+      position: relative;
+      float: left;
+      width: 100%;
+    }
+    ul {
+      float: left;
+      position: relative;
+      top: 0;
+      transform: none;
+      margin-top: 40px;
+      li {
+        display: block;
+        margin: 0 0 40px;
+        font-size: 24px;
+      }
+    }
+  }  
 }
 
 .section-pad {
@@ -144,7 +262,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.5);
 }
 .hero-img {
   position: fixed;
@@ -160,6 +278,7 @@ nav {
     color: #fff;    
     font-size: 50px;
     margin-bottom: 40px;
+    animation: 1.0s ease-in-out slideRighter;
   }
 }
 .star-logo {
@@ -180,6 +299,7 @@ nav {
       margin-right: 3%;
       display: inline-block;
       text-align: center;
+      border: 2px solid $color-1;
       border-radius: 2px;
       &:nth-of-type(3) {
         margin-right: 0;
@@ -188,17 +308,16 @@ nav {
         display: block;
       }
       .wrapper {
-        border: 2px solid $color-1;
-        margin-top: 16px;
         padding-bottom: 24px;
         border-radius: 2px;
       }
     }
     h3 {
-      margin: 20px 0 10px;      
+      margin: 0 0 20px;
+      padding-top: 20px;
       color: $color-2;
-      font-style: italic;
-      font-size: 22px;      
+      font-size: 22px;
+      border-top: 2px solid $color-1;      
     }
     p {
       line-height: 20px;
@@ -255,13 +374,13 @@ nav {
   transform: translateY(-50%);
   color: #fff;
   text-shadow: 0 0 10px #000;
+  animation: 1.0s ease-in-out slideRight;
 }
 .subpage-content {
   h3 {
     color: $color-1;
     margin-bottom: 20px;
     font-size: 22px;
-    // font-style: italic;
     border-bottom: 2px solid $color-2;
     padding-bottom: 4px;
     display: inline-block;
@@ -270,6 +389,9 @@ nav {
     margin-bottom: 50px;
     font-size: 18px;
     line-height: 30px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
   a {
     text-decoration: underline;
@@ -301,14 +423,12 @@ footer {
   .upper {
     margin-bottom: 50px;
     .contact-wrapper {
-      width: 600px;
+      width: 750px;
       margin: 0 auto;
     }
     .left {
       display: inline-block;
       width: 100%;
-      // width: 47%;
-      // margin-right: 5%;
     }
     .right {
       display: inline-block;
@@ -316,8 +436,6 @@ footer {
       text-align: center;
       font-weight: bold;
       font-size: 20px;
-      // width: 47%;
-      // float: right;
     }
     img {
       max-width: 60px;
@@ -328,33 +446,66 @@ footer {
       font-size: 20px;
       margin: 10px 0 40px;
     }
-    .icons {
-      margin: 24px 0 40px;
-      a {
-        display: inline-block;
-      }
-      .icon {
-        margin: 0 10px;
-        &:hover {
-          fill: $color-2;
-        }
-      }
-    }
-    .icon-phone {
-      width: 24px;
-      height: 24px;
-      position: relative;
-      top: 3px;
-      margin-right: 6px;
-    }
   }
   .lower {
+    position: relative;
+    height: $footer-ht;
     background-color: $color-1;
     p {
       color: #fff;
-      padding: 16px 0;
       font-size: 14px;
+      display: inline-block;
+      vertical-align: text-bottom;
     }
+    a {
+      color: #fff;
+      font-size: 18px;
+    }
+    .right {
+      display: inline-block;
+      width: 50%;
+      float: right;
+      position: relative;
+      height: $footer-ht;
+      p {
+        display: inline-block;
+        position: relative;
+        margin-right: 20px;
+      }
+    }
+  }
+  .icons-wrapper {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    p {
+      padding: 0;
+    }
+  }
+  .icons {
+    display: inline-block;
+    a {
+      display: inline-block;
+    }
+    .icon {
+      margin-left: 10px;
+      fill: #fff;
+      width: 24px;
+      height: 24px;
+      &:hover {
+        fill: $color-2;
+      }
+    }
+  }
+  .icon-phone {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+    fill: #fff;
   }
   form  {
     margin-bottom: 50px;
@@ -379,7 +530,7 @@ footer {
       }
     }
     input.wpcf7-form-control, textarea {
-      border: 1px solid $color-1;
+      border: 2px solid $color-1;
       border-radius: 2px;
       // &:focus {
       //   outline-color: $color-2;
@@ -392,6 +543,11 @@ footer {
       margin-bottom: 10px;
     }
   }  
+}
+#copy {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 // Bootstrap Grid

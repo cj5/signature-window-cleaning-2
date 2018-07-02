@@ -9,6 +9,13 @@ jQuery(document).ready(function($) {
   $('#header-img-filter').height(headerImgHt)
   $('#header-img-fill').height(headerImgHt - headerHt)
 
+  $('#navicon').click(function() {
+    $('#mobile-nav').fadeIn(200)
+  })
+  $('#close').click(function() {
+    $('#mobile-nav').fadeOut(200)
+  })
+
   const navResize = () => {
     $(window).scroll(function() {
       if ($(this).scrollTop() > 110) {

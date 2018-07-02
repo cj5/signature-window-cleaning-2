@@ -45,21 +45,11 @@
 	<div class="header-fill"></div>
 	<header>
 		<div class="container">
-			<div class="logo ib">
-				<a href="/"><img src="/wp-content/uploads/2018/06/logo.png" alt=""></a>
-			</div>
-			<nav class="desktop ib">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-				?>
-			</nav>
-			<div id="navicon"></div>
-			<div id="mobile-nav">
-				<div id="close"></div>
-				<nav class="mobile">
+			<div class="header-wrapper">
+				<div class="logo ib">
+					<a href="/"><img src="/wp-content/uploads/2018/06/logo.png" alt=""></a>
+				</div>
+				<nav class="desktop ib">
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
@@ -67,6 +57,29 @@
 					) );
 					?>
 				</nav>
+				<div id="navicon"></div>
+				<div id="mobile-nav">
+					<div class="container">
+						<div id="mobile-nav-header">
+							<div class="left">
+								<div class="logo ib">
+									<a href="/"><img src="/wp-content/uploads/2018/06/logo.png" alt=""></a>
+								</div>
+							</div>
+							<div class="right">
+								<div id="close"></div>
+							</div>							
+						</div>						
+						<nav class="mobile">
+							<?php
+							wp_nav_menu( array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							) );
+							?>
+						</nav>
+					</div>					
+				</div>			
 			</div>
 		</div>
 	</header>	
