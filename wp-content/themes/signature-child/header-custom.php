@@ -19,6 +19,8 @@
 
 	<?php wp_head(); ?>
 
+	<link rel="shortcut icon" type="image/png" href="/wp-content/uploads/2018/07/favicon.png"/>
+
 	<link href="https://fonts.googleapis.com/css?family=Work Sans:300,400,500" rel="stylesheet">
 </head>
 
@@ -40,10 +42,19 @@
 </defs>
 </svg>
 
-<body <?php body_class(); ?>>
-
+<body <?php body_class(); ?>>	
 	<div class="header-fill"></div>
 	<header>
+		<!-- <div class="top-bar">
+			<div class="container">
+				<div class="left">
+
+				</div>
+				<div class="right">
+					<a href="tel:612-701-0095">612.701.0095</a>
+				</div>
+			</div>
+		</div> -->
 		<div class="container">
 			<div class="header-wrapper">
 				<div class="logo ib">

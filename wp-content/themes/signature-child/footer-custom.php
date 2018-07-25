@@ -26,17 +26,17 @@
 			</div>
 		</div>
 		<div class="lower">
-			<div class="container">
-				<p id="copy">&copy; 2018 Signature Window Cleaning</p>
+			<div class="container">				
 				<div class="right">
 					<div class="icons-wrapper">
-						<p><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg> <a href="tel:612-701-0095">612.701.0095</a></p>
+						<p><a href="tel:612-701-0095"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg> 612.701.0095</a></p>
 						<div class="icons">
-							<a href="#"><svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg></a>
-							<a href="#"><svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a>
+							<a href="mailto:signaturewindowcleaning@yahoo.net"><svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg></a>
+							<a href="https://www.facebook.com/signaturewindowcleaning/" target="_blank"><svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg></a>
 						</div>
 					</div>												
 				</div>
+				<p id="copy">&copy; 2018 Signature Window Cleaning</p>
 			</div>
 		</div>
 	</footer>

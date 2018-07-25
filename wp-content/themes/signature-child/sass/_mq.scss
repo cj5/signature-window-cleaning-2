@@ -2,6 +2,30 @@
 
 //~~~~~~~~~~~~~~~~~~~ 1200px
 @media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 40px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+  #hero .btn {
+    font-size: 18px;
+    padding: 10px 40px;
+  }
+  .hero-content h1 {
+    font-size: 32px;
+    line-height: 23px;
+    margin-bottom: 30px;
+  }
+  #home-content .img-wrapper h3, #home-content .img-wrapper p {
+    padding: 20px 10px 0;
+  }
+  #home-content .img-wrapper h3 {
+    font-size: 18px;
+    margin-bottom: 0;
+    padding: 10px 10px 0;
+    width: 210px;
+  }
+
   // Bootstrap Grid
   .container {
     width: 960px;
@@ -15,11 +39,30 @@
 
 //~~~~~~~~~~~~~~~~~~~ 992px
 @media (max-width: 992px) {
+  .section-pad {
+    padding: 60px 0;
+  }
   nav.desktop {
     display: none;
   }
+  header, .header-wrapper, .logo, .header-fill {
+    height: $mobile-nav-ht;
+  }
+  .logo img {
+    max-width: 200px;
+  }
   #navicon {
     display: inline-block;
+  }
+  #home-content .img-wrapper h3 {
+    border: none;
+    width: 210px;
+  }
+  #page-heading h2 {
+    font-size: 36px;
+  }
+  #home-content .home-about {
+    padding: 70px 0 80px;
   }
   
   // Bootstrap Grid
@@ -35,6 +78,61 @@
 
 //~~~~~~~~~~~~~~~~~~~ 768px
 @media (max-width: 768px) {
+  .section-pad {
+    padding: 50px 0;
+  }
+  .hero-img, #hero-filter {
+    top: $mobile-nav-ht;
+  }
+  .hero-content h1 {
+    font-size: 24px;
+    line-height: 18px;
+    margin-bottom: 30px;
+  }
+  #hero .btn {
+    font-size: 14px;
+    padding: 8px 26px;
+  }
+  #home-content h2 {
+    font-size: 24px;
+  }
+  #home-content .img-wrapper {
+    text-align: center;
+  }
+  #home-content .img-wrapper .img-box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 30px;
+    float: none;
+    &:last-of-type {
+      margin-bottom: 0;
+      margin-right: auto;
+    }
+  }
+  #home-content .home-about p {  
+    font-size: 18px;
+  }
+  #mobile-nav #mobile-nav-header .left {
+    width: 49%;
+  }
+  #page-heading h2 {
+    font-size: 28px;
+  }
+  #home-content .home-about {
+    padding: 70px 0 80px;
+  }
+  footer .lower a {
+    color: #fff;
+    font-size: 14px;
+    vertical-align: text-bottom;
+  }
+  footer .icons .icon {
+    vertical-align: text-bottom;
+  }
+  footer .lower .right p {    
+    margin-right: 10px;    
+  }
+  
   // Bootstrap Grid
   .container {
     width: 540px;
@@ -48,6 +146,51 @@
 
 //~~~~~~~~~~~~~~~~~~~ 576px
 @media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 24px;
+    line-height: 26px;
+    margin: 0 auto 10px;    
+    max-width: 300px;
+  }
+  .star-logo {    
+    margin-bottom: 40px;    
+  }
+  footer .upper h4 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  #copy, footer .icons-wrapper, footer .lower .right, footer .lower {
+    position: relative;
+    width: 100%;
+    top: 0;
+    transform: none;
+    text-align: center;
+    left: 0;
+    height: inherit;
+    height: initial;
+    overflow: hidden;
+  }
+  .subpage-content h3 {
+    padding-bottom: 10px;
+    line-height: 26px;
+  }
+  .subpage-content .contact {
+    margin: 10px 0 40px;
+  }
+  .subpage-content .contact li .hide-mobile {
+    display: none;
+  }
+  .subpage-content .contact li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  footer .icons-wrapper {
+    margin: 30px 0 20px;
+  }
+  #copy {
+    margin-bottom: 20px;
+  }
+  
   // Bootstrap Grid
   .container {
     width: auto;
@@ -61,5 +204,35 @@
 
 //~~~~~~~~~~~~~~~~~~~ 420px
 @media (max-width: 420px) {
-
+  .section-pad {
+    padding: 30px 0;
+  }
+  .hero-content h1 {
+    font-size: 18px;
+    line-height: 20px;    
+  }
+  #hero .btn {
+    font-size: 12px;
+    padding: 6px 20px;
+  }
+  #home-content h2 {
+    font-size: 18px;
+  }
+  #header-img-filter, #header-img-fill {
+    min-height: inherit;
+    min-height: initial;
+  }
+  #page-heading h2 {
+    font-size: 24px;
+  }
+  .star-logo {
+    margin-bottom: 20px;
+  }
+  #home-content .home-about {
+    padding: 60px 0;
+  }
+  footer .upper h4 {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }

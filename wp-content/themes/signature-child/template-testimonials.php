@@ -28,7 +28,7 @@ get_header('custom');
 </div>
 <div id="header-img-filter"></div>
 <div id="header-img">
-	<img src="/wp-content/uploads/2018/06/header_clean-windows.jpg" alt="">	
+	<img src="/wp-content/uploads/2018/07/header-hero.jpg" alt="">	
 </div>				
 <section id="about-content" class="subpage-content bg-white section-pad">
 	<div class="container">

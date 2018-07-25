@@ -55,7 +55,7 @@ svg {
 }
 #hero .btn {
   background: rgba(255,255,255,0.4);
-  padding: 14px 40px;
+  padding: 10px 40px;
   font-size: 20px;
   border: 2px solid #fff;
   color: #fff !important;
@@ -83,6 +83,12 @@ header {
   background-color: rgba(255,255,255,1.0);
   width: 100%;
   @include transition();
+}
+.top-bar {
+  background-color: $color-1;
+  * {
+    color: #fff;
+  }
 }
 .logo {
   @include transition();
@@ -126,6 +132,9 @@ nav {
     color: $color-1 !important;
   }
 }
+.desktop .current-menu-item a {
+  color: $color-2 !important;
+}
 .header-wrapper {
   position: relative;
   height: 110px;
@@ -143,6 +152,7 @@ nav {
   bottom: 10px;
   float: right;
   cursor: pointer;
+  @include transition();
   &:before {
     content: "";
     position: absolute;
@@ -174,16 +184,18 @@ nav {
   #mobile-nav-header {
     display: inline-block;
     width: 100%;
-    height: 110px;
+    height: $mobile-nav-ht;
     position: relative;
     border-bottom: 2px solid $color-1;
     .left {
       display: inline-block;
       width: 50%;
+      height: $mobile-nav-ht;
     }
     .right {
       display: inline-block;
       width: 49%;
+      height: $mobile-nav-ht;
       #close {
         cursor: pointer;
         width: 30px;
@@ -237,7 +249,7 @@ nav {
       position: relative;
       top: 0;
       transform: none;
-      margin-top: 40px;
+      margin-top: 35px;
       li {
         display: block;
         margin: 0 0 40px;
@@ -267,6 +279,7 @@ nav {
 .hero-img {
   position: fixed;
   top: 0px;
+  width: 100%;
 }
 .hero-content {
   text-align: center;
@@ -294,14 +307,15 @@ nav {
   .img-wrapper {
     display: inline-block;
     width: 100%;    
-    .img-box {
-      width: 31%;
-      margin-right: 3%;
-      display: inline-block;
+    .img-box {      
+      position: relative;
+      width: 33%;
+      float: left;
+      margin-right: 0.5%;
       text-align: center;
-      border: 2px solid $color-1;
       border-radius: 2px;
-      &:nth-of-type(3) {
+      overflow: hidden;
+      &:last-of-type {
         margin-right: 0;
       }
       img {
@@ -310,30 +324,51 @@ nav {
       .wrapper {
         padding-bottom: 24px;
         border-radius: 2px;
+        position: absolute;
+        bottom: 0px;
+        color: #fff;
+        left: 50%;
+        transform: translateX(-50%);
       }
+      .img-box-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3); @include transition();
+      }
+      // &:hover h3 {
+      //   transform: scale(1.05);
+      // }
     }
     h3 {
-      margin: 0 0 20px;
-      padding-top: 20px;
-      color: $color-2;
-      font-size: 22px;
-      border-top: 2px solid $color-1;      
+      width: 270px;
+      display: inline-block;
+      margin: 0 20px 0px;
+      padding: 12px 0;
+      color: #fff;
+      font-size: 26px;
+      font-weight: 400;
+      border-top: 4px solid $color-2;
+      visibility: visible;
+      transform: none;
+      transition: transform 0.1s ease-in-out;
     }
     p {
       line-height: 20px;
       padding: 0 20px;
+      text-align: left;
     }    
   }
   h2 {
     text-align: center;        
-    font-style: italic;
+    font-weight: 400;
     font-size: 32px;
     margin-bottom: 10px;
   }
   .home-about {
     padding: 90px 0 100px;
     margin: 100px 0 0;
-    background-color: #F5F1E9;
+    background-color: rgba($color-1,.12);
     h3 {      
       color: $color-2;
       font-size: 32px;
@@ -344,26 +379,34 @@ nav {
       margin: 0 auto;
       font-size: 20px;
     }
+    a {
+      text-decoration: underline;
+    }
   }
 }
 #header-img {
   position: fixed;
   top: 0;
+  width: 100%;
   img {
     display: block;
+    width: 100%;
+    max-height: 260px;
   }
 }
 #header-img-fill {
   position: relative;
   width: 100%;
   height: 200px;
+  min-height: 70px;
 }
 #header-img-filter {
   position: fixed;
   width: 100%;
+  min-height: 70px;
   top: 0;
   z-index: 9;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba($color-1, 0.75);
 }
 #page-heading {  
   font-size: 32px;
@@ -373,7 +416,7 @@ nav {
   top: 50%;
   transform: translateY(-50%);
   color: #fff;
-  text-shadow: 0 0 10px #000;
+  // text-shadow: 0 0 10px #000;
   animation: 1.0s ease-in-out slideRight;
 }
 .subpage-content {
@@ -384,9 +427,13 @@ nav {
     border-bottom: 2px solid $color-2;
     padding-bottom: 4px;
     display: inline-block;
+    margin-top: 20px;
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
   p {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 18px;
     line-height: 30px;
     &:last-of-type {
@@ -394,13 +441,37 @@ nav {
     }
   }
   a {
-    text-decoration: underline;
+    text-decoration: underline;    
+  }
+  .contact-heading {
+    font-size: 22px;
+  }
+  .contact {
+    margin: 10px 0 50px;
+    display: inline-block;
+    width: 100%;
+    li {
+      margin-bottom: 12px;
+      font-size: 20px;      
+      a {
+        text-decoration: none;
+        &:hover .icon {
+          fill: $color-2;
+        }       
+      }
+    }
+    .icon {
+      margin-right: 14px;
+      width: 30px;
+      height: 30px;
+      vertical-align: top;
+    }
   }
 }
 #testimonial {
   border: 2px solid $color-1;
   padding: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   box-shadow: 6px 6px 10px #ccc;
   .quote {
     font-style: italic;
@@ -423,7 +494,7 @@ footer {
   .upper {
     margin-bottom: 50px;
     .contact-wrapper {
-      width: 750px;
+      max-width: 750px;
       margin: 0 auto;
     }
     .left {
@@ -483,11 +554,14 @@ footer {
     p {
       padding: 0;
     }
+    a:hover .icon-phone {
+      fill: $color-2;
+    }
   }
   .icons {
     display: inline-block;
     a {
-      display: inline-block;
+      display: inline-block;      
     }
     .icon {
       margin-left: 10px;
@@ -504,7 +578,7 @@ footer {
     height: 24px;
     position: relative;
     top: 3px;
-    margin-right: 6px;
+    margin-right: 2px;
     fill: #fff;
   }
   form  {
@@ -541,6 +615,9 @@ footer {
     }
     p {
       margin-bottom: 10px;
+    }
+    .wpcf7-submit {
+      margin-top: 14px;
     }
   }  
 }
