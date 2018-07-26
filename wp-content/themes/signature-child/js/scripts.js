@@ -3,13 +3,10 @@ jQuery(document).ready(function($) {
   $('body').css('overflow-y', 'hidden');
   const w = $(window).width();    
   $('body').css('overflow-y', 'visible');
-  console.log('width:', w)
 
   let heroHt = $('img.hero-img').height()
   let headerHt = $('header').height()
-  console.log(headerHt);
   let headerImgHt = $('#header-img').height()
-  console.log(heroHt)
   $('#hero-filter').height(heroHt)
   if (w <= 768) {
     $('#hero-fill').height(heroHt)
@@ -21,8 +18,25 @@ jQuery(document).ready(function($) {
   $('#header-img-filter').height(headerImgHt)
   $('#header-img-fill').height(headerImgHt - headerHt)
   if (w <= 420) {
-    console.log(headerImgHt);
     $('#header-img-fill').height(headerImgHt)
+  }
+  window.onload = () => {
+    let heroHt = $('img.hero-img').height()
+    let headerHt = $('header').height()
+    let headerImgHt = $('#header-img').height()
+    $('#hero-filter').height(heroHt)
+    if (w <= 768) {
+      $('#hero-fill').height(heroHt)
+      $('#header-img-filter, #header-img-fill, #header-img').css('top', headerHt)
+      $('#header-img-fill').css('position', 'static')
+    } else {
+      $('#hero-fill').height(heroHt - headerHt)
+    }
+    $('#header-img-filter').height(headerImgHt)
+    $('#header-img-fill').height(headerImgHt - headerHt)
+    if (w <= 420) {
+      $('#header-img-fill').height(headerImgHt)
+    }
   }
 
   $('#navicon').click(function() {
